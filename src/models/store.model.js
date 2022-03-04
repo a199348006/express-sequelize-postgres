@@ -1,17 +1,17 @@
 module.exports = (sequelize, DataTypes, Model) => {
   class Store extends Model {};
   Store.init({
-    id: {
+    store_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
     },
-    name: {
+    store_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    type: {
+    store_type: {
       type: DataTypes.STRING,
       allowNull: false
     },
