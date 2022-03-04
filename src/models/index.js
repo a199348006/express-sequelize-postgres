@@ -1,4 +1,5 @@
-const { Sequelize } = require('sequelize');
+require('dotenv').config();
+const { Sequelize, DataTypes, Model } = require('sequelize');
 const sequelize = new Sequelize(process.env.DB, process.env.DB_USER, process.env.DB_PASSWORD, {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -10,5 +11,6 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+db.store = require('./store.model')(sequelize, DataTypes, Model);
 
 module.exports = db;

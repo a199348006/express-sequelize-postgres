@@ -1,7 +1,15 @@
 const express = require('express');
 const db = require('./src/models/index');
 const app = express();
-const post = 6789;
+const port = 6789;
+
+db.sequelize.sync({})
+  .then(() => {
+    console.log('Database is connecting...')
+  })
+  .catch(err => {
+    console.error('sequelize.sync() error message: ', err)
+  });
 
 app.use(express.json()); // for parsing applicaion/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
