@@ -13,5 +13,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.store = require('./store.model')(sequelize, DataTypes, Model);
 db.menu = require('./menu.model')(sequelize, DataTypes, Model);
+db.order = require('./order.model')(sequelize, DataTypes, Model);
 
 module.exports = db;
