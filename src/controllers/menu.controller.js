@@ -1,11 +1,11 @@
 const db = require("../models/index");
-const Model = db.menu;
+const Menu = db.menu;
 const Op = db.Sequelize.Op;
 
-exports.postMenu = (req, res) => {
+exports.create = (req, res) => {
   const postData = { menu_name, price, store_id } = req.body;
 
-  Model.create(postData)
+  Menu.create(postData)
     .then(data => {
       res.status(200).send(data);
     })

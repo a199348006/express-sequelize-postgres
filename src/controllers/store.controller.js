@@ -1,11 +1,11 @@
 const db = require("../models/index");
-const Model = db.store;
+const Store = db.store;
 const Op = db.Sequelize.Op;
 
-exports.postStoreData = (req, res) => {
+exports.create = (req, res) => {
   const postData = { store_name, store_type, address, delivery_min_order, phone_number } = req.body;
 
-  Model.create(postData)
+  Store.create(postData)
     .then(data => {
       res.status(200).send(data);
     })
@@ -15,3 +15,4 @@ exports.postStoreData = (req, res) => {
       });
     });
 }
+

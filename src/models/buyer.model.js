@@ -22,11 +22,11 @@ module.exports = (sequelize, DataTypes, Model) => {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      store_id: {
+      order_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'store', // use table name
-          key: 'store_id'
+          model: 'order', // use table name
+          key: 'order_id'
         }
       }
     }, {
