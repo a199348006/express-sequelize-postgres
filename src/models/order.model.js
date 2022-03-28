@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes, Model) => {
       references: {
         model: 'store', // use table name
         key: 'store_id'
-      }
+      },
+      onDelete: 'CASCADE'
     }
   }, {
     sequelize,

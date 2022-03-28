@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes, Model) => {
         references: {
           model: 'menu',
           key: 'menu_id'
-        }
+        },
+        onDelete: 'CASCADE'
       },
       quantity: {
         type: DataTypes.INTEGER,
@@ -27,7 +28,8 @@ module.exports = (sequelize, DataTypes, Model) => {
         references: {
           model: 'order', // use table name
           key: 'order_id'
-        }
+        },
+        onDelete: 'CASCADE'
       }
     }, {
       sequelize,
