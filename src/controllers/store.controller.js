@@ -61,3 +61,23 @@ exports.destroy = (req, res) => {
       });
     });
 }
+
+exports.update = (req, res) => {
+  const id = req.params.id;
+  const values = { store_name, store_type, address, delivery_min_order, phone_number } = req.body;
+  const options = {
+    where: {
+      store_id: { [Op.eq]: id }
+    }
+  }
+
+  Store.update(values, options)
+    .then(() => {
+      res.status(201).end();
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while modifying data."
+      });
+    });
+}
